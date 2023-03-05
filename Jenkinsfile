@@ -10,7 +10,9 @@ node{
     sh "${mavenHome}/bin/mvn sonar:sonar"
   }
 
-  state('upload ArtifactintoNexus'){
-    sh "${mavenHome}/bin/mvn deploy"
+  stage('upload ArtifactintoNexus'){
+   sh "${mavenHome}/bin/mvn deploy"
   }
+
+
 }
