@@ -1,5 +1,3 @@
-#developing and writing a jenkins scripted pipeline for deployment automation. 
-
 node{
   def  mavenHome  = tool name:  'maven3.9.0'
   stage('Clonefromgithubrepo'){
