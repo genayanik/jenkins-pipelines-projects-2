@@ -14,5 +14,9 @@ node{
    sh "${mavenHome}/bin/mvn deploy"
   }
 
+  state('deploy2TestEnv')
+    sh "echo 'DevOps is making Lots of sense'"
+      deploy adapters: [tomcat9(credentialsId: 'tomcat-user-deploy', path: '', url: 'http://3.98.138.118:8009/')], contextPath: 'project-cicd-2', war: 'target/*.war'
+ 
 
 }
