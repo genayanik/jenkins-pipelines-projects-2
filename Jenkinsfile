@@ -1,6 +1,6 @@
 
 node{
-  def  mavenHome  = tool name:  'maven'
+  def  mavenHome  = tool name:  'maven3.9.0'
   agent{
     label 'agent1'
   }
