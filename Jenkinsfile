@@ -1,5 +1,9 @@
+
 node{
   def  mavenHome  = tool name:  'maven'
+  agent{
+    label 'agent1'
+  }
   stage('1SCMCLONE'){
     git 'https://github.com/Lion-Technology-Solutions/jenkins-pipelines-projects-2.git'
   }
