@@ -1,5 +1,5 @@
 node{
-  def  mavenHome  = tool name:  'maven3.9.0'
+  def  mavenHome  = tool name:  'maven'
   stage('1SCMCLONE'){
     git 'https://github.com/Lion-Technology-Solutions/jenkins-pipelines-projects-2.git'
   }
