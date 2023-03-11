@@ -5,9 +5,21 @@ node{
     label  'test1'
    }
 
-   stage('CLONEFROMGITHUB'){
+stage('CLONEFROMGITHUB'){
     git 'https://github.com/Lion-Technology-Solutions/jenkins-pipelines-projects-2.git'
 }
+
+stage('mavenbuild&Package'){
+    sh "${mavenHome}/bin/mvn clean package"
+
+}
+
+stage('sonarqube-codeqality-analysis'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('Nexus-uploadbuild-artificat-to-nexus')
+   sh "${mavenHome}/bin/mvn deploy"
 
 
 
