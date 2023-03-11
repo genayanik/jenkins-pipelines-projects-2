@@ -21,10 +21,17 @@ stage('sonarqube-codeqality-analysis'){
 //stage('Nexus-uploadbuild-artificat-to-nexus')
   // sh "${mavenHome}/bin/mvn deploy"
 
-stage('deploytotomcat'){
+stage('deploytotomcat-dev'){
 
    deploy adapters: [tomcat9(credentialsId: 'MARCH11-PIPELIE', path: '', url: 'http://3.98.138.118:8009/')], contextPath: 'march11', war: 'target/*.war' 
 }
 
+stage('approvalgate'){
+    sh "echo 'deploy to uat-liontech-devopsteam'"
+    timeout(time:5, unut: 'DAYS'){
+    input massage: 'Application ready for review , please review and provide approval'
+    }
+    
+}
 
 }
