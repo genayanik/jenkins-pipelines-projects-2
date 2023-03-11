@@ -18,10 +18,13 @@ stage('sonarqube-codeqality-analysis'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 
-stage('Nexus-uploadbuild-artificat-to-nexus')
-   sh "${mavenHome}/bin/mvn deploy"
+//stage('Nexus-uploadbuild-artificat-to-nexus')
+  // sh "${mavenHome}/bin/mvn deploy"
 
+stage('deploytotomcat'){
 
+   deploy adapters: [tomcat9(credentialsId: 'MARCH11-PIPELIE', path: '', url: 'http://3.98.138.118:8009/')], contextPath: 'march11', war: 'target/*.war' 
+}
 
 
 }
