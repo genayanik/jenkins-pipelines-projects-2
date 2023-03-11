@@ -102,7 +102,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>LION TECH ACADEMY Snapshot Nexus Repository </name>
-	      <url>http://3.98.138.118:8081/repository/march-snapshots/</url>
+	      <url>http://3.98.138.118:8081/repository/march11-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
