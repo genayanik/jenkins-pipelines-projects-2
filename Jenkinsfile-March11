@@ -32,6 +32,15 @@ stage('approvalgate'){
     input massage: 'Application ready for review , please review and provide approval'
     }
     
+
 }
+
+stage('deploy2prod'){
+    sh " sleep 50"
+
+   deploy adapters: [tomcat9(credentialsId: 'MARCH11-PIPELIE', path: '', url: 'http://3.98.138.118:8009/')], contextPath: 'march11-prod', war: 'target/*.war' 
+}
+
+
 
 }
