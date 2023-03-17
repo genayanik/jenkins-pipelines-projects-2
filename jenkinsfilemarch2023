@@ -1,7 +1,7 @@
 node{
-  def   mavenHome = tool:  'maven'
-  stage('ISCMCLONE'){
-    git 'https://github.com/genayanik/jenkins-pipelines-projects-2.git '
+ def   mavenHome = tool:  'maven'
+ stage('ISCMCLONE'){
+ git 'https://github.com/genayanik/jenkins-pipelines-projects-2.git '
   }
 
 
